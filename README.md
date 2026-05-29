@@ -1,94 +1,61 @@
-# MahaBHUMI-GIS-Land-Records-System-
-A project inspired by MRSAC's MahaBHUMI initiative
-Project Structure
+🗺️ MahaBHUMI — Land Records Management System
+A mini web application inspired by MRSAC's MahaBHUMI initiative, built as part of internship preparation for Maharashtra Remote Sensing Application Centre (MRSAC), Nagpur.
+
+📌 About the Project
+MahaBHUMI is a Land Records Management System that allows users to register, search, update, and visualize land parcels across Maharashtra districts. It uses Remote Sensing and GIS concepts combined with a REST API backend and interactive frontend dashboard.
+
+🚀 Features
+
+📊 Dashboard — Live stats: total parcels, area, registered & disputed counts + bar charts
+🗂️ Records — Searchable & filterable land parcel database
+🗺️ Plot Map — Schematic color-coded parcel grid by land type
+➕ Add Parcel — Register new land parcels with full details
+🔌 REST API — Full CRUD API with search, filter & stats endpoints
+
+
+🛠️ Tech Stack
+LayerTechnologyBackendPython + FlaskDatabaseSQLite (sqlite3)FrontendHTML + CSS + JSAPI StyleREST
+
+📁 Project Structure
 mahabhumi/
-├── app.py              ← Flask backend (API server)
+├── app.py              ← Flask backend (REST API)
 ├── requirements.txt    ← Python dependencies
-├── mahabhumi.db        ← SQLite database (auto-created on first run)
+├── mahabhumi.db        ← SQLite database (auto-created)
 ├── static/
-│   └── index.html      ← Frontend (HTML + CSS + JS)
+│   └── index.html      ← Frontend (Dashboard, Map, Records)
 └── README.md
-Step-by-Step Setup & Execution
-Step 1 — Install Python
-Make sure Python 3.8+ is installed. Check by running:
 
-python --version
-If not installed → download from https://www.python.org/downloads/
-
-Step 2 — Open Terminal / Command Prompt
-Windows: Press Win + R → type cmd → Enter
-Mac/Linux: Open Terminal
-Navigate to the project folder:
-
-cd path/to/mahabhumi
-Example:
-
-cd C:\Users\YourName\Downloads\mahabhumi
-Step 3 — Create a Virtual Environment (recommended)
-python -m venv venv
-Activate it:
-
-Windows: venv\Scripts\activate
-Mac/Linux: source venv/bin/activate
-You'll see (venv) appear in your terminal — that means it's active.
-
-Step 4 — Install Dependencies
-pip install -r requirements.txt
-This installs Flask and Flask-CORS.
-
-Step 5 — Run the Server
-python app.py
-You should see:
-
-MahaBHUMI server running at http://127.0.0.1:5000
- * Running on http://127.0.0.1:5000
-Step 6 — Open in Browser
-Open your browser and go to:
-
+⚙️ Setup & Run
+1. Clone the repository
+bashgit clone https://github.com/YOUR_USERNAME/MahaBHUMI-GIS-Land-Records-System.git
+cd MahaBHUMI-GIS-Land-Records-System
+2. Create virtual environment
+bashpython -m venv venv
+venv\Scripts\activate        # Windows
+source venv/bin/activate     # Mac/Linux
+3. Install dependencies
+bashpip install -r requirements.txt
+4. Run the server
+bashpython app.py
+5. Open in browser
 http://127.0.0.1:5000
-The full app will load with Dashboard, Records, Plot Map, Add Parcel, and API Docs tabs.
 
-API Endpoints
-Method	Endpoint	Description
-GET	/api/parcels	Get all parcels (search/filter)
-GET	/api/parcels/:id	Get one parcel by ID
-POST	/api/parcels	Register new parcel
-PUT	/api/parcels/:id	Update existing parcel
-DELETE	/api/parcels/:id	Delete a parcel
-GET	/api/stats	Dashboard summary statistics
-Test the API with curl
-Get all parcels:
+🔌 API Endpoints
+MethodEndpointDescriptionGET/api/parcelsGet all parcels (supports ?search=, ?type=, ?district=)GET/api/parcels/:idGet single parcel by IDPOST/api/parcelsRegister new parcelPUT/api/parcels/:idUpdate existing parcelDELETE/api/parcels/:idDelete a parcelGET/api/statsDashboard summary statistics
 
-curl http://127.0.0.1:5000/api/parcels
-Add a new parcel:
+🏛️ Inspired By
+This project is inspired by MRSAC (Maharashtra Remote Sensing Application Centre) and their flagship MahaBHUMI land records digitization initiative under the Government of Maharashtra.
 
-curl -X POST http://127.0.0.1:5000/api/parcels \
-  -H "Content-Type: application/json" \
-  -d '{
-    "owner": "Ramesh Patil",
-    "district": "Nagpur",
-    "taluka": "Hingna",
-    "village": "Bhandewadi",
-    "survey_no": "24/B",
-    "area_ha": 2.5,
-    "land_type": "Agricultural",
-    "status": "Registered"
-  }'
-Get stats:
+## 👨‍💻 Team
 
-curl http://127.0.0.1:5000/api/stats
-Technologies Used
-Layer	Technology
-Backend	Python + Flask
-Database	SQLite (via Python's built-in sqlite3)
-Frontend	HTML + CSS + Vanilla JS
-API Style	REST
-Stop the Server
-Press Ctrl + C in the terminal.
+| Name | Branch |
+|------|--------|
+| Ayush | Data Science (DS) |
+| Meghansh | Data Science (DS)  |
+| Abhishek | Data Science (DS)  |
+| Himanshu | Data Science (DS)  |
 
-Common Errors & Fixes
-Error	Fix
-ModuleNotFoundError: flask	Run pip install -r requirements.txt
-Address already in use	Another app is on port 5000. Change port=5000 to port=5001 in app.py
-python not found	Use python3 instead of python
-Page not loading	Make sure server is running and URL is http://127.0.0.1:5000
+📍 Maharashtra, India
+
+📄 License
+This project is open source and available under the MIT License.
