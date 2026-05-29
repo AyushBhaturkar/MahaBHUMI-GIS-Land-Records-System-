@@ -40,8 +40,16 @@ bashpython app.py
 5. Open in browser
 http://127.0.0.1:5000
 
-🔌 API Endpoints
-MethodEndpointDescriptionGET/api/parcelsGet all parcels (supports ?search=, ?type=, ?district=)GET/api/parcels/:idGet single parcel by IDPOST/api/parcelsRegister new parcelPUT/api/parcels/:idUpdate existing parcelDELETE/api/parcels/:idDelete a parcelGET/api/statsDashboard summary statistics
+
+
+API Endpoints
+Method	Endpoint	Description
+GET	/api/parcels	Get all parcels (search/filter)
+GET	/api/parcels/:id	Get one parcel by ID
+POST	/api/parcels	Register new parcel
+PUT	/api/parcels/:id	Update existing parcel
+DELETE	/api/parcels/:id	Delete a parcel
+GET	/api/stats	Dashboard summary statistics
 
 🏛️ Inspired By
 This project is inspired by MRSAC (Maharashtra Remote Sensing Application Centre) and their flagship MahaBHUMI land records digitization initiative under the Government of Maharashtra.
